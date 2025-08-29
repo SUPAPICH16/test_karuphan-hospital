@@ -31,8 +31,20 @@ try:
     print("✅ Home page loaded")
     time.sleep(1)
 
-    driver.save_screenshot(os.path.join(folder_name, "home_page.png"))
+    driver.save_screenshot(os.path.join(folder_name, "TC_ADLogin_01.png"))
     time.sleep(1)
+
+    #Test-02 เช็กอีเมลและรหัสไม่ถูก
+    driver.find_element(By.XPATH,"/html/body/div[1]/form/input").send_keys("admintest@pcu.local")
+    driver.find_element(By.XPATH,"/html/body/div[1]/form/div[1]/input").send_keys("Admintest#1234")
+    driver.find_element(By.XPATH,"/html/body/div[1]/form/button").click()
+    invalid = driver.find_element(By.XPATH,"/html/body/div[1]/form/div[2]").text
+    assert invalid == "อีเมลหรือรหัสผ่านไม่ถูกต้อง"
+    print("✅ Invalid login message displayed correctly")
+
+    driver.save_screenshot(os.path.join(folder_name, "TC_ADLogin_02.png"))
+    time.sleep(1)    
+
 
 finally:
     driver.quit()
