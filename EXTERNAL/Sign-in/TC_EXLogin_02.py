@@ -24,7 +24,7 @@ try:
     print("✅ Check the success words")
 
     #Test-02 เช็กอีเมลและรหัสไม่ถูก EX
-    driver.find_element(By.XPATH,"/html/body/div[1]/form/input").send_keys("weeraphat.s@example.com")
+    driver.find_element(By.XPATH,"/html/body/div[1]/form/input").send_keys("weeraphat.s15@example.com")
     driver.find_element(By.XPATH,"/html/body/div[1]/form/div[1]/input").send_keys("weeraphat")
     driver.find_element(By.XPATH,"/html/body/div[1]/form/button").click()
     time.sleep(2)
