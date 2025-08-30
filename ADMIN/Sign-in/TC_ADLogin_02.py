@@ -6,10 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import time
 import os
 
-root_dir = os.path.dirname(os.path.abspath(__file__))  
-root_dir = os.path.dirname(root_dir)  
-
-folder_name = os.path.join(root_dir, "screenshots")
+folder_name = "screenshots"
 os.makedirs(folder_name, exist_ok=True)
 
 #การเปิดหน้าเว็บโดยไม่ปิดเอง

@@ -6,10 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import time
 import os
 
-root_dir = os.path.dirname(os.path.abspath(__file__))  
-root_dir = os.path.dirname(root_dir)  
-
-folder_name = os.path.join(root_dir, "screenshots")
+folder_name = "screenshots"
 os.makedirs(folder_name, exist_ok=True)
 
 #การเปิดหน้าเว็บโดยไม่ปิดเอง
@@ -26,7 +23,7 @@ try:
     assert signin == "ระบบครุภัณฑ์"
     print("✅ Check the success words")
 
-    #Test-03 เช็กอีเมลไม่ถูกต้องและรหัสถูก
+    #Test-04 เช็กอีเมลไม่ถูกต้องและรหัสถูก
     driver.find_element(By.XPATH,"/html/body/div[1]/form/input").send_keys("admintest@pcu.local")
     driver.find_element(By.XPATH,"/html/body/div[1]/form/div[1]/input").send_keys("Admin#1234")
     driver.find_element(By.XPATH,"/html/body/div[1]/form/button").click()
